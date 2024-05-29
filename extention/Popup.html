@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<!--
+This HTML file serves as the popup page for the Youtube Transcript Summarizer Chrome extension.
+It includes a form that allows users to select the language.
+-->
+<head>
+    <title>Youtube Transcript Summarizer</title>
+    <style>
+        /* CSS styles */
+        body {
+            width: 500px; /* Adjust the width of the popup */
+            padding: 20px; /* Add padding for better appearance */
+            background-color: #fefdfd; /* Set background color */
+            font-family: monospace; /* Set font-family to monospace */
+            font-size: 14px; /* Increase font size */
+        }
+        h1 {
+            text-align: center;
+            color: #ff0000; /* Set text color to red */
+            background: linear-gradient(to right, #ff0000, #000000); /* Apply red-black gradient background */
+            -webkit-background-clip: text; /* Clip text to background gradient */
+            -webkit-text-fill-color: transparent; /* Hide text fill */
+            font-weight: bold; /* Set font weight to bold */
+            font-size: 30px; /* Increase font size */
+            margin-bottom: 20px; /* Add margin at the bottom of h1 */
+        }
+        form {
+            margin-top: 10px; /* Add margin at the top of the form */
+        }
+        label, select {
+            display: block;
+            margin-bottom: 10px; /* Add margin between label and select */
+        }
+        input, button, select {
+            width: 100%; /* Make input, button, and select full-width */
+            padding: 10px;
+            margin-top: 10px; /* Add margin at the top of input and select */
+            border: 1px solid #ccc; /* Add border for input and select */
+            border-radius: 4px; /* Add border-radius for input and select */
+            box-sizing: border-box; /* Ensure padding and border are included in width */
+        }
+        button {
+            background-color: #ff0000; /* Set button background color to red */
+            color: white; /* Set button text color to white */
+            border: none; /* Remove button border */
+            cursor: pointer; /* Change cursor to pointer on hover */
+            transition: background-color 0.3s; /* Add transition for smoother hover effect */
+            animation: gradient-animation 4s infinite alternate; /* Add gradient animation to button */
+        }
+        button:hover {
+            background-color: #cc0000; /* Change background color on hover */
+            animation: none; /* Disable animation on hover */
+        }
+        @keyframes gradient-animation {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+        #output {
+            margin-top: 10px; /* Add margin at the top of output */
+            white-space: pre-wrap; /* Preserve line breaks */
+        }
+        p {
+            text-align: center;
+            margin-top: 10px; /* Add margin at the top of paragraph */
+            font-size: 16px; /* Reduce font size for 'Made by' text */
+            color: #0b0a0a; /* Set text color */
+        }
+    </style>
+</head>
+<body>
+    <h1>Youtube Transcript Summarizer</h1>
+    <form id="summaryForm">
+        <!-- Removed the input for maximum length -->
+        <label for="language">Language:</label>
+        <select id="language" name="language">
+            <option value="en">English</option>
+            <option value="hi">Hindi</option>
+
+            <!-- Add more language options as needed -->
+        </select>
+        <button type="submit" id="summarize">Summarize</button>
+    </form>
+    <button id="download" style="display: none;">Download Summary</button>
+    <p id="output"></p>
+    <hr>
+    <p>Made by Group AG13</p>
+    <script src="Popup.js"></script>
+</body>
+</html>
